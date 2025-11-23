@@ -1,0 +1,63 @@
+name: Merge Inbox to Main List
+on:
+  # Run when a file is added to inbox
+  push:
+    paths:
+      - 'inbox/**'
+  # Or run manually
+  workflow_dispatch:
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Merge Scripts
+        run: |
+          python3 -c "
+          import json, os, glob
+
+          # 1. Load the Main List
+          try:
+              with open('habedere.json', 'r', encoding='utf-8') as f:
+                  main_data = json.load(f)
+          except FileNotFoundError:
+              main_data = []
+
+          # 2. Find all files in inbox
+          inbox_files = glob.glob('inbox/*.json')
+          if not inbox_files:
+              print('No new files found.')
+              exit(0)
+
+          # 3. Append new words
+          for file in inbox_files:
+              try:
+                  with open(file, 'r', encoding='utf-8') as f:
+                      new_entry = json.load(f)
+                      # Ensure it's a list or single object, handle both
+                      if isinstance(new_entry, list):
+                          main_data.extend(new_entry)
+                      else:
+                          main_data.append(new_entry)
+                  # Delete the inbox file after merging
+                  os.remove(file)
+              except Exception as e:
+                  print(f'Error processing {file}: {e}')
+
+          # 4. Save Main List
+          with open('habedere.json', 'w', encoding='utf-8') as f:
+              json.dump(main_data, f, indent=2, ensure_ascii=False)
+          "
+
+      - name: Commit and Push
+        run: |
+          git config user.name "Styrian Bot"
+          git config user.email "actions@github.com"
+          git add habedere.json
+          git add inbox/
+          git commit -m "Merged new Styrian words from Inbox" || exit 0
+          git push
