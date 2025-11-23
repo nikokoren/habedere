@@ -827,6 +827,12 @@
       "pronounciation": "a G'schichtl druckn",
       "phrase": "Hör auf, a Gschichtl z’ drucken, des glaubt da jo kaner.",
       "translation": "Hör auf, eine Geschichte aufzutischen, das glaubt dir doch keiner."
+    },
+    {
+      "word": "Ablaufdatum",
+      "pronounciation": "Oblaufdatum",
+      "phrase": "Der Käs hod scho long des Ablaufdatum überschrittn.",
+      "translation": "Dieser Käse hat das Ablaufdatum schon lange überschritten."
     }
   ],
   "last_updated": 1763863892.779949
