@@ -833,6 +833,12 @@
       "pronounciation": "Oblaufdatum",
       "phrase": "Der Käs hod scho long des Ablaufdatum überschrittn.",
       "translation": "Dieser Käse hat das Ablaufdatum schon lange überschritten."
+    },
+    {
+      "word": "abnudeln",
+      "pronounciation": "obnudeln",
+      "phrase": "De Schraubn is gons obgnudelt.",
+      "translation": "Die Schraube ist schon ganz abgenutzt."
     }
   ],
   "last_updated": 1763863892.779949
