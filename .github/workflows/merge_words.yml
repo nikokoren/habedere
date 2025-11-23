@@ -1,0 +1,82 @@
+name: Merge Inbox Words
+on:
+  # Run automatically when a new file lands in "inbox"
+  push:
+    paths:
+      - 'inbox/**'
+  # Run manually if needed
+  workflow_dispatch:
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Merge Inbox to Main List
+        run: |
+          python3 -c "
+          import json, os, glob
+
+          # 1. Load the Main List
+          # We handle both flat lists [...] and object lists {'words': [...]}
+          try:
+              with open('habedere.json', 'r', encoding='utf-8') as f:
+                  main_data = json.load(f)
+          except (FileNotFoundError, json.JSONDecodeError):
+              main_data = []
+
+          # If the main list is a dict (like your trmnl one), we extract the list part
+          is_dict_structure = isinstance(main_data, dict)
+          if is_dict_structure:
+              # Adjust this key if your main list uses a different key (e.g. 'styrian_words')
+              target_list = main_data.get('austrian_words', [])
+          else:
+              target_list = main_data
+
+          # 2. Find new files
+          inbox_files = glob.glob('inbox/*.json')
+          if not inbox_files:
+              print('No new files to merge.')
+              exit(0)
+
+          # 3. Process each new word
+          for file_path in inbox_files:
+              try:
+                  with open(file_path, 'r', encoding='utf-8') as f:
+                      new_entry = json.load(f)
+                      
+                  # Add to our list
+                  if isinstance(new_entry, list):
+                      target_list.extend(new_entry)
+                  else:
+                      target_list.append(new_entry)
+                  
+                  # Delete the file from inbox so we don't merge it twice
+                  os.remove(file_path)
+                  print(f'Merged {file_path}')
+              except Exception as e:
+                  print(f'Skipping {file_path} due to error: {e}')
+
+          # 4. Save the result back
+          if is_dict_structure:
+              main_data['austrian_words'] = target_list
+              # Optional: Update a timestamp if you want
+              # main_data['last_updated'] = ... 
+          else:
+              main_data = target_list
+
+          with open('habedere.json', 'w', encoding='utf-8') as f:
+              json.dump(main_data, f, indent=2, ensure_ascii=False)
+          "
+
+      - name: Commit and Push
+        run: |
+          git config user.name "Styrian Bot"
+          git config user.email "actions@github.com"
+          git add habedere.json
+          git add inbox/
+          git commit -m "Merged new words from Inbox [skip ci]" || exit 0
+          git push
