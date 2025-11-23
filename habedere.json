@@ -1,0 +1,808 @@
+{
+  "austrian_words": [
+    {
+      "word": "(sich) ausgehen",
+      "pronunciation": "GEHT si AUS; oft: geht si (no) aus",
+      "phrase": "Geht si des no aus bis um fünfe?",
+      "translation": "Schaffen wir das noch bis fünf?"
+    },
+    {
+      "word": "spazi",
+      "pronunciation": "SPAH-tsi",
+      "phrase": "Mia ham no a bissl spazi bis zum Zug.",
+      "translation": "Wir haben bis zum Zug noch etwas Puffer/Spielraum."
+    },
+    {
+      "word": "Ribisl",
+      "pronunciation": "RIH-bisl",
+      "phrase": "I back heit an Ribislkuchen, kummst vorbei?",
+      "translation": "Ich backe heute einen Johannisbeerkuchen, kommst du vorbei?"
+    },
+    {
+      "word": "Klescher",
+      "pronunciation": "KLESCH-a",
+      "phrase": "Die Tür hats zua'g'haun, des war a g'scheiter Klescher!",
+      "translation": "Die Tür ist zugefallen, das war ein ordentlicher Knall!"
+    },
+    {
+      "word": "Rote Rüben",
+      "pronunciation": "ROH-te RÜH-ben",
+      "phrase": "I kauf am Markt zehn deka rote Rüben fürn Salat.",
+      "translation": "Ich kaufe auf dem Markt zehn Deka Rote Bete für den Salat."
+    },
+    {
+      "word": "fad",
+      "pronunciation": "FAAD",
+      "phrase": "Mir is so fad, gemma auf an Kaffee?",
+      "translation": "Mir ist so langweilig, gehen wir auf einen Kaffee?"
+    },
+    {
+      "word": "a Hirn wia a Nudlsieb",
+      "pronunciation": "a HIRN wia a NUDL-sieb",
+      "phrase": "Da Sepp hot a Hirn wia a Nudlsieb.",
+      "translation": "Sepp ist extrem vergesslich."
+    },
+    {
+      "word": "Bitt' di goa schee",
+      "pronunciation": "BIT-di goa SCHÄÄ",
+      "phrase": "Bitt' di goa schee! Des gibt's ja net.",
+      "translation": "Also wirklich! Das gibt's doch nicht."
+    },
+    {
+      "word": "abbrausn",
+      "pronunciation": "AB-braus-n",
+      "phrase": "I geh mi gschwind abbrausen, dann kömma los.",
+      "translation": "Ich dusche mich schnell ab, dann können wir los."
+    },
+    {
+      "word": "Aber geh!",
+      "pronunciation": "AH-ber GEH",
+      "phrase": "Aber geh, des glaub i da ned.",
+      "translation": "Ach komm, das glaube ich dir nicht."
+    },
+    {
+      "word": "abgehen",
+      "pronunciation": "AB-gehn",
+      "phrase": "Mir geht mei Schlissl ob.",
+      "translation": "Ich finde meinen Schlüssel nicht."
+    },
+    {
+      "word": "I hau mi ob",
+      "pronunciation": "i HAU mi OB",
+      "phrase": "I hau mi ob!",
+      "translation": "Ich lach mich kaputt!"
+    },
+    {
+      "word": "goschert",
+      "pronunciation": "GOSCH-ert",
+      "phrase": "Sei ned so goschert, bitte.",
+      "translation": "Sei bitte nicht so frech."
+    },
+    {
+      "word": "Lercherlschas",
+      "pronunciation": "LÄR-cherl-schas",
+      "phrase": "Des is a Lercherlschas, des moch ma glei.",
+      "translation": "Das ist ein Klacks, das machen wir gleich."
+    },
+    {
+      "word": "Wappler",
+      "pronunciation": "WAP-pl-a",
+      "phrase": "Geh, sei ned so a Wappla!",
+      "translation": "Komm, sei kein Trottel."
+    },
+    {
+      "word": "modschgan",
+      "pronunciation": "MODSCH-gn",
+      "phrase": "Hör auf z' modschgan, des war ja net so g'meint.",
+      "translation": "Hör auf zu granteln/so scharf zu reden, das war doch nicht so gemeint."
+    },
+    {
+      "word": "Spompanadeln",
+      "pronunciation": "SPOM-pa-NAH-deln",
+      "phrase": "Mach kane Spompanadeln.",
+      "translation": "Mach keine Faxen."
+    },
+    {
+      "word": "potschat",
+      "pronunciation": "POTSCH-at",
+      "phrase": "Heit bin i so potschat, ma fallt ois aus da Hand.",
+      "translation": "Heute bin ich total ungeschickt, mir fällt alles aus der Hand."
+    },
+    {
+      "word": "Leiberl",
+      "pronunciation": "LAI-berl",
+      "phrase": "I ziag ma gschwind a frisches Leiberl an.",
+      "translation": "Ich ziehe mir schnell ein frisches T-Shirt an."
+    },
+    {
+      "word": "verwordagelt",
+      "pronunciation": "ver-VOAR-da-gelt",
+      "phrase": "Die Torte is uns beim Heimgeh ganz vawordagelt.",
+      "translation": "Die Torte ist uns auf dem Heimweg komplett zerdrückt/ramponiert worden."
+    },
+    {
+      "word": "Zwiderwurzn",
+      "pronunciation": "TSWEE-da-wurz'n",
+      "phrase": "Heit bist a rechte Zwiderwurzn.",
+      "translation": "Heute bist du richtig grantig."
+    },
+    {
+      "word": "fladern",
+      "pronunciation": "FLAH-dern",
+      "phrase": "Wer hat ma mei Kipferl g'fladert?",
+      "translation": "Wer hat mir mein Kipferl geklaut?"
+    },
+    {
+      "word": "budel di net auf",
+      "pronunciation": "BUU-del di ned auf",
+      "phrase": "Heast, budel di ned auf.",
+      "translation": "Spiel dich nicht so auf."
+    },
+    {
+      "word": "Gschaftlhuber",
+      "pronunciation": "G-SCHAFTL-huaba",
+      "phrase": "Der is a rechter Gschaftlhuber.",
+      "translation": "Der ist ein richtiger Wichtigtuer."
+    },
+    {
+      "word": "schasaugad",
+      "pronunciation": "SCHAS-au-gat",
+      "phrase": "Bist du schasaugad?",
+      "translation": "Bist du blind, oder was?"
+    },
+    {
+      "word": "geht si aus",
+      "pronunciation": "GEHT si AUS",
+      "phrase": "Glaubst, des geht si no aus bis sechse?",
+      "translation": "Meinst du, wir schaffen das noch bis sechs?"
+    },
+    {
+      "word": "Springinkerl",
+      "pronunciation": "SCHPRING-in-kerl",
+      "phrase": "Die Kleine is a richtigs Springinkerl.",
+      "translation": "Die Kleine ist ein richtiger Wirbelwind."
+    },
+    {
+      "word": "Grießnockerl",
+      "pronunciation": "GRIESS-nock-erl",
+      "phrase": "I nehm a Grießnockerlsuppn.",
+      "translation": "Ich nehme eine Grießnockerlsuppe."
+    },
+    {
+      "word": "baba",
+      "pronunciation": "BAH-bah",
+      "phrase": "Baba, bis morgn!",
+      "translation": "Tschüss, bis morgen!"
+    },
+    {
+      "word": "fadisieren",
+      "pronunciation": "fah-di-SIE-ren",
+      "phrase": "I fadisier mi scho.",
+      "translation": "Mir ist langweilig."
+    },
+    {
+      "word": "Detschn",
+      "pronunciation": "DET-schn",
+      "phrase": "Pass auf, sunst fangst da a Detschn ein.",
+      "translation": "Pass auf, sonst fängst du dir eine Ohrfeige ein."
+    },
+    {
+      "word": "Tschopperl",
+      "pronunciation": "TSCHOP-perl",
+      "phrase": "Du bist a Tschopperl.",
+      "translation": "Du bist ein Tollpatsch."
+    },
+    {
+      "word": "Plutzer",
+      "pronunciation": "PLUT-za",
+      "phrase": "I hob ma den Plutzer ang'haut.",
+      "translation": "Ich hab mir den Kopf angeschlagen."
+    },
+    {
+      "word": "Palatschinken",
+      "pronunciation": "pa-la-TSCHIN-ken",
+      "phrase": "I nehm Palatschinken mit Marillenmarmelad'.",
+      "translation": "Ich nehme Palatschinken mit Aprikosenmarmelade."
+    },
+    {
+      "word": "Zwutschgerl",
+      "pronunciation": "TSWUTSCH-erl",
+      "phrase": "Schau, des is a kloans Zwutschgerl.",
+      "translation": "Schau, das ist ein kleines Kind."
+    },
+    {
+      "word": "Wifzack",
+      "pronunciation": "WIF-zack",
+      "phrase": "Du bist a Wifzack.",
+      "translation": "Du bist echt pfiffig."
+    },
+    {
+      "word": "Schnackerl stoßn",
+      "pronunciation": "SCHNACK-erl stoasn",
+      "phrase": "I hab Schnackerlstoßen.",
+      "translation": "Ich habe Schluckauf."
+    },
+    {
+      "word": "strawanzen",
+      "pronunciation": "schtra-WAN-zn",
+      "phrase": "Gemma a bissl strawanzn.",
+      "translation": "Gehen wir ein bisschen bummeln."
+    },
+    {
+      "word": "Kiberer",
+      "pronunciation": "KIB-erer",
+      "phrase": "Do vorn steht a Kiberer.",
+      "translation": "Da vorne steht ein Polizist."
+    },
+    {
+      "word": "i-Tüpferl-Reiter",
+      "pronunciation": "i-TÜP-ferl-RAI-ta",
+      "phrase": "Sei ned so a i-Tüpferl-Reiter.",
+      "translation": "Sei nicht so ein Erbsenzähler."
+    },
+    {
+      "word": "auszuckn",
+      "pronunciation": "AUS-zuck'n",
+      "phrase": "Zuck ned aus.",
+      "translation": "Rast nicht aus."
+    },
+    {
+      "word": "Fetzenschädl",
+      "pronunciation": "FETZ'n-schädl",
+      "phrase": "Heast, du Fetzenschädl.",
+      "translation": "Hey, du Dummkopf."
+    },
+    {
+      "word": "kletzeln",
+      "pronunciation": "KLETZ-eln",
+      "phrase": "Kletzel ned dauernd am Pickerl herum.",
+      "translation": "Hör auf, ständig am Aufkleber herumzukratzen."
+    },
+    {
+      "word": "Scherzel",
+      "pronunciation": "SCHER-zel",
+      "phrase": "I nehm des Scherzerl vom Brot.",
+      "translation": "Ich nehme den Brotkanten/das Endstück."
+    },
+    {
+      "word": "Blitzgneißer",
+      "pronunciation": "BLITZ-gnei-ssa",
+      "phrase": "Du bist a Blitzgneißer.",
+      "translation": "Du kapierst Sachen sofort."
+    },
+    {
+      "word": "Häferl",
+      "pronunciation": "HÄ-ferl",
+      "phrase": "I nehm a Häferl Kaffee.",
+      "translation": "Ich nehme eine große Tasse Kaffee."
+    },
+    {
+      "word": "Schleich di!",
+      "pronunciation": "SCHLAICH di",
+      "phrase": "Schleich di!",
+      "translation": "Verschwinde!"
+    },
+    {
+      "word": "schiach",
+      "pronunciation": "SCHIACH",
+      "phrase": "Heit is richtig schiach draußt.",
+      "translation": "Heute ist es draußen richtig hässlich (Wetter)."
+    },
+    {
+      "word": "Heast mi net?",
+      "pronunciation": "HE-ast mi net?",
+      "phrase": "Heast mi net?",
+      "translation": "Hörst du mich nicht?"
+    },
+    {
+      "word": "Bist terrisch?",
+      "pronunciation": "BIST TER-risch",
+      "phrase": "Bist terrisch?",
+      "translation": "Bist du schwerhörig?"
+    },
+    {
+      "word": "Vogerlsalat",
+      "pronunciation": "FOH-gerl sa-LAAT",
+      "phrase": "I moch ma an Vogerlsalat mit Kernöl und Erdäpfeln.",
+      "translation": "Ich mache mir einen Feldsalat mit Kürbiskernöl und Kartoffeln."
+    },
+    {
+      "word": "Hau di üba d' Heisa!",
+      "pronunciation": "HAU di Ü-ba d' HOI-sa",
+      "phrase": "Hau di üba d' Heisa!",
+      "translation": "Hau ab!"
+    },
+    {
+      "word": "Karfiol",
+      "pronunciation": "KAR-fi-ol",
+      "phrase": "I koch heit Karfiol mit Bröseln.",
+      "translation": "Ich koche heute Blumenkohl mit Semmelbröseln."
+    },
+    {
+      "word": "lätschat",
+      "pronunciation": "LÄTSCH-at",
+      "phrase": "Die Pommes san scho ganz lätschat.",
+      "translation": "Die Pommes sind schon ganz labbrig."
+    },
+    {
+      "word": "Schwammerl",
+      "pronunciation": "SCHWAM-merl",
+      "phrase": "Im Herbst gemma in'n Woid Schwammerl suchen.",
+      "translation": "Im Herbst gehen wir in den Wald Pilze suchen."
+    },
+    {
+      "word": "Pickerl",
+      "pronunciation": "PICK-erl",
+      "phrase": "Klebst ma des Pickerl aufs Heftl?",
+      "translation": "Klebst du mir den Aufkleber aufs Heft?"
+    },
+    {
+      "word": "Scheibtruah",
+      "pronunciation": "SCHAIB-truah",
+      "phrase": "Bringst ma bitte d' Scheibtruah?",
+      "translation": "Bringst du mir bitte die Schubkarre?"
+    },
+    {
+      "word": "Lulu machen",
+      "pronunciation": "LU-lu MACH-en",
+      "phrase": "I muaß gschwind Lulu machen.",
+      "translation": "Ich muss schnell Pipi."
+    },
+    {
+      "word": "rundumadum",
+      "pronunciation": "rund-UM-a-DUM",
+      "phrase": "Da Garten is rundumadum eing'zaunt.",
+      "translation": "Der Garten ist rundherum eingezäunt."
+    },
+    {
+      "word": "Kuddelmuddel",
+      "pronunciation": "KUD-del-MUD-del",
+      "phrase": "In de Untarlagn is a echtes Kuddelmuddel.",
+      "translation": "In den Unterlagen herrscht ein richtiges Durcheinander."
+    },
+    {
+      "word": "nonetnana",
+      "pronunciation": "no net no na",
+      "phrase": "Nonetnona.",
+      "translation": "Na klar."
+    },
+    {
+      "word": "Zuckergoscherl",
+      "pronunciation": "ZUCK-er-GOSCH-erl",
+      "phrase": "Er is a echtes Zuckergoscherl.",
+      "translation": "Er ist eine richtige Naschkatze."
+    },
+    {
+      "word": "Owezahra",
+      "pronunciation": "OH-we-zah-ra",
+      "phrase": "Er is a rechter Owezahra.",
+      "translation": "Er ist ein richtiger Drückeberger."
+    },
+    {
+      "word": "Schlapfen",
+      "pronunciation": "SCHLAP-fn",
+      "phrase": "Ziag da d' Schlapfen an.",
+      "translation": "Zieh dir die Hausschuhe an."
+    },
+    {
+      "word": "sich verkutzen",
+      "pronunciation": "ver-KUT-zn",
+      "phrase": "I hob mi beim Trinken verkutzt.",
+      "translation": "Ich habe mich beim Trinken verschluckt."
+    },
+    {
+      "word": "hutschen",
+      "pronunciation": "HUT-schn",
+      "phrase": "Gemma in'n Park hutschen.",
+      "translation": "Gehen wir im Park schaukeln."
+    },
+    {
+      "word": "Schau ma mal",
+      "pronunciation": "SCHAU ma mal",
+      "phrase": "Schau ma mal.",
+      "translation": "Mal sehen."
+    },
+    {
+      "word": "Kluppen",
+      "pronunciation": "KLUP-pen",
+      "phrase": "Reich ma bitte zwoa Kluppn, sunst fliegt ma d' Wäsch davon.",
+      "translation": "Reich mir bitte zwei Wäscheklammern, sonst fliegt mir die Wäsche davon."
+    },
+    {
+      "word": "pumperlgsund",
+      "pronunciation": "PUM-perl-g'sund",
+      "phrase": "I bin pumperlgsund.",
+      "translation": "Ich bin kerngesund."
+    },
+    {
+      "word": "Ungustl",
+      "pronunciation": "UN-gusdl",
+      "phrase": "Der is a rechter Ungustl.",
+      "translation": "Der ist ein richtiger Unsympath."
+    },
+    {
+      "word": "Mascherl",
+      "pronunciation": "MASCH-erl",
+      "phrase": "Des Mascherl sitzt net richtig.",
+      "translation": "Die Fliege sitzt nicht richtig."
+    },
+    {
+      "word": "I bin ned dei Schani",
+      "pronunciation": "i BIN ned dei SCHAH-ni",
+      "phrase": "Heast, i bin ned dei Schani.",
+      "translation": "Hey, ich bin nicht dein Laufbursche."
+    },
+    {
+      "word": "ka Zenti Spazi",
+      "pronunciation": "kaa ZEN-ti SPAH-tsi",
+      "phrase": "Beim Einparken is ka Zenti Spazi.",
+      "translation": "Beim Einparken gibt es keinen Zentimeter Spielraum."
+    },
+    {
+      "word": "deppat",
+      "pronunciation": "DEPP-at",
+      "phrase": "Du bist ja deppat.",
+      "translation": "Du spinnst ja."
+    },
+    {
+      "word": "ins Noankastl schaun",
+      "pronunciation": "ins NOAN-kasdl",
+      "phrase": "Heast, schau ned ins Noankastl.",
+      "translation": "Hey, starr nicht ins Leere."
+    },
+    {
+      "word": "Gschirrhangerl",
+      "pronunciation": "G-SCHIRR-hang-erl",
+      "phrase": "Reich ma s' Gschirrhangerl.",
+      "translation": "Reich mir das Geschirrtuch."
+    },
+    {
+      "word": "Pleampl",
+      "pronunciation": "PLEE-am-pl",
+      "phrase": "Sei ka Pleampl.",
+      "translation": "Sei kein Depp."
+    },
+    {
+      "word": "Passt scho!",
+      "pronunciation": "PASST scho",
+      "phrase": "Passt scho.",
+      "translation": "Stimmt so."
+    },
+    {
+      "word": "Abwasch",
+      "pronunciation": "AB-wasch",
+      "phrase": "Stell's in d' Abwasch.",
+      "translation": "Stell es ins Spülbecken."
+    },
+    {
+      "word": "Glumpert",
+      "pronunciation": "GLUM-pert",
+      "phrase": "Räum des Glumpert weg.",
+      "translation": "Räum den Krempel weg."
+    },
+    {
+      "word": "Grandscherm",
+      "pronunciation": "GRANT-schern",
+      "phrase": "Sei ned so a Grandscherm.",
+      "translation": "Sei nicht so ein Miesepeter."
+    },
+    {
+      "word": "sudern",
+      "pronunciation": "SUU-dern",
+      "phrase": "Hör auf z' sudern.",
+      "translation": "Hör auf zu jammern."
+    },
+    {
+      "word": "Gluatmugl",
+      "pronunciation": "GLUAT-mugl",
+      "phrase": "Heit brennt da Gluatmugl.",
+      "translation": "Heute knallt die Sonne."
+    },
+    {
+      "word": "tummeln (di)",
+      "pronunciation": "TUM-mln di",
+      "phrase": "Tummle di a bissl.",
+      "translation": "Beeil dich ein bisschen."
+    },
+    {
+      "word": "aufikralln",
+      "pronunciation": "AU-fi-kralln",
+      "phrase": "Krall aufi do.",
+      "translation": "Kletter da rauf."
+    },
+    {
+      "word": "Nackerpatzi",
+      "pronunciation": "NACK-er-pat-zi",
+      "phrase": "Der Niko is scho wieder a Nackapatzi.",
+      "translation": "Niko ist schon wieder nackig unterwegs."
+    },
+    {
+      "word": "britscheln (pritscheln)",
+      "pronunciation": "BRITSCH-eln",
+      "phrase": "Setz ma uns ans Ufer und britscheln a bissl mit de Fiaß.",
+      "translation": "Setzen wir uns ans Ufer und planschen ein bisschen mit den Füßen."
+    },
+    {
+      "word": "gefinkelt",
+      "pronunciation": "ge-FIN-kelt",
+      "phrase": "Des is a g'finkelte Idee.",
+      "translation": "Das ist eine ausgefuchste Idee."
+    },
+    {
+      "word": "Lackn",
+      "pronunciation": "LAK-n",
+      "phrase": "Pass auf, do vorn is a fette Lackn.",
+      "translation": "Pass auf, da vorne ist eine große Pfütze."
+    },
+    {
+      "word": "Gatsch",
+      "pronunciation": "GATSCH",
+      "phrase": "Nach'm Regen is da ganze Weg a Gatsch.",
+      "translation": "Nach dem Regen ist der ganze Weg Schlamm/Matsch."
+    },
+    {
+      "word": "gatschig",
+      "pronunciation": "GATSCH-ig",
+      "phrase": "Heit san d' Wiesn ur gatschig.",
+      "translation": "Heute sind die Wiesen richtig matschig."
+    },
+    {
+      "word": "Zuckerl",
+      "pronunciation": "ZUCK-erl",
+      "phrase": "Magst a Zuckerl?",
+      "translation": "Möchtest du ein Bonbon?"
+    },
+    {
+      "word": "ausfratscheln",
+      "pronunciation": "aus-FRATSCH-eln",
+      "phrase": "Lass di ned ausfratscheln.",
+      "translation": "Lass dich nicht aushorchen."
+    },
+    {
+      "word": "ausrasten",
+      "pronunciation": "aus-RAST-n",
+      "phrase": "Gemma do am Bankerl kurz ausrasten.",
+      "translation": "Lass uns dort auf der Bank kurz eine Pause machen."
+    },
+    {
+      "word": "Schlagobers",
+      "pronunciation": "SCHLAG-obers",
+      "phrase": "A Sachertortn mit Schlag, bittschön.",
+      "translation": "Eine Sachertorte mit Schlagsahne, bitte."
+    },
+    {
+      "word": "tamisch",
+      "pronunciation": "TA-misch",
+      "phrase": "Vom Karussell bin i ganz tamisch worn.",
+      "translation": "Vom Karussell ist mir ganz schwindlig/benommen geworden."
+    },
+    {
+      "word": "Leiwerl",
+      "pronunciation": "LAI-werl",
+      "phrase": "I ziag ma gschwind a frisches Leiwerl an.",
+      "translation": "Ich ziehe mir schnell ein frisches T-Shirt an."
+    },
+    {
+      "word": "Potschn (Patschen)",
+      "pronunciation": "POTSCH-n",
+      "phrase": "Wo san meine Potschn?",
+      "translation": "Wo sind meine Hausschuhe?"
+    },
+    {
+      "word": "picksüß",
+      "pronunciation": "PIK-süß",
+      "phrase": "Der Kuchn is picksüß.",
+      "translation": "Der Kuchen ist klebrig-süß / viel zu süß."
+    },
+    {
+      "word": "Morgentau",
+      "pronunciation": "MOR-gen-tau",
+      "phrase": "In da Fruah liegt no Morgentau auf da Wiesn.",
+      "translation": "Am Morgen liegt noch Tau auf der Wiese."
+    },
+    {
+      "word": "Träum süß von sauren Gurken",
+      "pronunciation": "TRÄUM süß von SAU-ren GUR-kn",
+      "phrase": "Träum süß von saurn Gurkn!",
+      "translation": "Schlaf gut, träum was Schönes."
+    },
+    {
+      "word": "Rotzpippn",
+      "pronunciation": "ROTZ-pipp'n",
+      "phrase": "Du bist a Rotzpippn.",
+      "translation": "Du bist eine freche Rotznase."
+    },
+    {
+      "word": "diesig",
+      "pronunciation": "DIE-sig",
+      "phrase": "Heit is ganz diesig.",
+      "translation": "Heute ist es sehr trüb/neblig."
+    },
+    {
+      "word": "a schwindlige G'schicht",
+      "pronunciation": "a SCHWIND-li-ge G'schicht",
+      "phrase": "Des is a schwindlige G'schicht.",
+      "translation": "Das ist eine dubiose/unglaubwürdige Geschichte."
+    },
+    {
+      "word": "blerarei",
+      "pronunciation": "BLE-ra-RAI",
+      "phrase": "Hör auf mit dera Blerarei.",
+      "translation": "Hör auf mit dem Geplärre/Gejammer."
+    },
+    {
+      "word": "rean",
+      "pronunciation": "RE-an",
+      "phrase": "Hör auf z'rean.",
+      "translation": "Hör auf zu weinen."
+    },
+    {
+      "word": "Gelse",
+      "pronunciation": "GEL-se",
+      "phrase": "Heit fressn mi die Gelsen auf.",
+      "translation": "Die Mücken sind heute extrem lästig."
+    },
+    {
+      "word": "Verhackert's",
+      "pronunciation": "ver-HAK-kerts",
+      "phrase": "Beim Buschenschank nehm i a Verhackert'sbrot.",
+      "translation": "Im Buschenschank nehme ich ein Brot mit fein gehacktem Speckaufstrich."
+    },
+    {
+      "word": "Gfrett",
+      "pronunciation": "g-FRETT",
+      "phrase": "Des is a rechtes Gfrett.",
+      "translation": "Das ist eine ziemliche Schererei."
+    },
+    {
+      "word": "Eierschwammerl",
+      "pronunciation": "EI-er-schwam-merl",
+      "phrase": "Heit gemma Eierschwammerl suacha.",
+      "translation": "Heute gehen wir Pfifferlinge suchen."
+    },
+    {
+      "word": "Paradeiser",
+      "pronunciation": "para-DAI-ser",
+      "phrase": "I moch ma an Paradeisersalat mit Kernöl.",
+      "translation": "Ich mache mir einen Tomatensalat mit Kürbiskernöl."
+    },
+    {
+      "word": "Fisolen",
+      "pronunciation": "fi-SO-len",
+      "phrase": "I koch heit Rahmfisolen.",
+      "translation": "Ich koche heute grüne Bohnen in Rahmsauce."
+    },
+    {
+      "word": "Jausn / jausnen",
+      "pronunciation": "JAUS-n",
+      "phrase": "Gemma was jausnen.",
+      "translation": "Lass uns eine Brotzeit machen."
+    },
+    {
+      "word": "Gspusi",
+      "pronunciation": "g-SPU-si",
+      "phrase": "Des is sei Gspusi.",
+      "translation": "Das ist seine Liebelei."
+    },
+    {
+      "word": "kraxln",
+      "pronunciation": "KRA-xln",
+      "phrase": "Gemma a bissl kraxln.",
+      "translation": "Gehen wir ein bisschen klettern."
+    },
+    {
+      "word": "raunzen",
+      "pronunciation": "RAUN-zen",
+      "phrase": "Hör auf z' raunzen.",
+      "translation": "Hör auf zu jammern/nörgeln."
+    },
+    {
+      "word": "gach",
+      "pronunciation": "GACH",
+      "phrase": "Des is gach ganga.",
+      "translation": "Das ging plötzlich/schnell."
+    },
+    {
+      "word": "zach",
+      "pronunciation": "ZACH",
+      "phrase": "Des is a zach G'schicht.",
+      "translation": "Das ist eine mühsame Angelegenheit."
+    },
+    {
+      "word": "Weckerl",
+      "pronunciation": "WECK-erl",
+      "phrase": "I hätt gern zwoa Weckerl.",
+      "translation": "Ich hätte gern zwei Brötchen."
+    },
+    {
+      "word": "Winkerl",
+      "pronunciation": "WIN-kerl",
+      "phrase": "Stell's ins Winkerl.",
+      "translation": "Stell es in die Ecke."
+    },
+    {
+      "word": "Kirtag",
+      "pronunciation": "KIR-tag",
+      "phrase": "Am Sonntag gemma aufn Kirtag.",
+      "translation": "Am Sonntag gehen wir auf den Jahrmarkt/das Dorffest."
+    },
+    {
+      "word": "Tixo",
+      "pronunciation": "TIK-so",
+      "phrase": "Hast a Tixo?",
+      "translation": "Hast du Klebeband?"
+    },
+    {
+      "word": "Sackerl",
+      "pronunciation": "SACK-erl",
+      "phrase": "Gib ma bitte a Sackerl dazu.",
+      "translation": "Bitte gib mir eine Tüte/einen Beutel dazu."
+    },
+    {
+      "word": "Topfen",
+      "pronunciation": "TOP-fen",
+      "phrase": "I moch ma an Topfenaufstrich.",
+      "translation": "Ich mache mir einen Quarkaufstrich."
+    },
+    {
+      "word": "Eierspeis",
+      "pronunciation": "EI-er-speis",
+      "phrase": "I moch ma a Eierspeis.",
+      "translation": "Ich mache mir Rührei."
+    },
+    {
+      "word": "Stanitzel",
+      "pronunciation": "STA-ni-tzl",
+      "phrase": "I nehm a Schoko im Stanitzel.",
+      "translation": "Ich nehme eine Kugel Schokolade im Hörnchen."
+    },
+    {
+      "word": "zuzln",
+      "pronunciation": "ZUZ-ln",
+      "phrase": "Er zuzlt am Zuckerl.",
+      "translation": "Er lutscht am Bonbon."
+    },
+    {
+      "word": "Feitel",
+      "pronunciation": "FAI-tel",
+      "phrase": "I hob imma an Feitel eingsteckt.",
+      "translation": "Ich habe immer ein Taschenmesser eingesteckt."
+    },
+    {
+      "word": "Jaukerl",
+      "pronunciation": "JAU-kerl",
+      "phrase": "I kriag heit a Jaukerl.",
+      "translation": "Ich bekomme heute eine Spritze/Impfung."
+    },
+    {
+      "word": "Trum",
+      "pronunciation": "TRUM",
+      "phrase": "Des is a g'scheids Trum.",
+      "translation": "Das ist ein ordentliches Stück."
+    },
+    {
+      "word": "Rauchfang",
+      "pronunciation": "RAUCH-fang",
+      "phrase": "Da Rauchfang is zua, i ruf den Rauchfangkehrer an.",
+      "translation": "Der Schornstein ist verstopft, ich rufe den Schornsteinfeger an."
+    },
+    {
+      "word": "hudeln",
+      "pronunciation": "HU-del(n)",
+      "phrase": "Vom hudeln kumman die Kinder.",
+      "translation": "Keine Hektik, durch Hast passieren Fehler."
+    },
+    {
+      "word": "pfuschn",
+      "pronunciation": "PFUSCH-n",
+      "phrase": "Pfusch ned, moch's gscheit.",
+      "translation": "Pfusch nicht, mach es ordentlich."
+    },
+    {
+      "word": "Gstett'n",
+      "pronunciation": "G-STETT'n",
+      "phrase": "Hintn is nur mehr a Gstett'n.",
+      "translation": "Hinten ist nur noch verwildertes Brachland."
+    }
+  ]
+}
