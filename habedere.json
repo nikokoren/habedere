@@ -1295,6 +1295,12 @@
       "pronounciation": "hets",
       "phrase": "Des war a Hetz!",
       "translation": "Das war ein Spaß!"
+    },
+    {
+      "word": "hin",
+      "pronounciation": "hin",
+      "phrase": "Des Radl is hin.",
+      "translation": "Das Fahrrad ist kaputt."
     }
   ],
   "last_updated": 1764035370.326457
