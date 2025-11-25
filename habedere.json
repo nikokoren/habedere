@@ -1619,6 +1619,12 @@
       "pronounciation": "Pappalatur",
       "phrase": "Hoit dei Pappalatur!",
       "translation": "Halt dein Mund!"
+    },
+    {
+      "word": "Pappendeckel",
+      "pronounciation": "Poppndegg'l",
+      "phrase": "Nimm da den Pappendeckel weg.",
+      "translation": "Nimm den Karton weg."
     }
   ],
   "last_updated": 1764035370.326457
