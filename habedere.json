@@ -1301,6 +1301,12 @@
       "pronounciation": "hin",
       "phrase": "Des Radl is hin.",
       "translation": "Das Fahrrad ist kaputt."
+    },
+    {
+      "word": "hinich",
+      "pronounciation": "hi-nich",
+      "phrase": "Des Radl is komplett hinich.",
+      "translation": "Das Fahrrad ist komplett kaputt."
     }
   ],
   "last_updated": 1764035370.326457
