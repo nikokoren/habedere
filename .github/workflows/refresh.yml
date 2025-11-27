@@ -1,7 +1,7 @@
 name: Daily TRMNL Refresh
 on:
   schedule:
-    - cron: '0 0 * * *' # Midnight UTC
+    - cron: '0 * * * *' # Midnight UTC
   workflow_dispatch: # Allows manual testing button
 
 jobs:
