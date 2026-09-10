@@ -102,8 +102,21 @@ Reihenfolge in `habedere.json` ist damit die Reihenfolge der Tage. Der Bestand
 liegt in gemischter Reihenfolge, darum fallen keine thematischen Bloecke auf.
 Neue Woerter haengen hinten an und kommen entsprechend am Ende des Durchlaufs.
 
-`last_updated` liest die Vorlage nicht. `refresh.yml` haelt den Zeitstempel
-frisch und koennte auch ganz entfallen; der Cron stand frueher auf `0 * * * *`
-(stuendlich, trotz des Kommentars "Midnight UTC") und laeuft jetzt einmal am
-Tag. Beide schreibenden Workflows teilen sich eine `concurrency`-Gruppe, damit
-sie sich nicht gegenseitig den Push zerschiessen.
+### Warum refresh.yml nicht entfallen darf
+
+TRMNL erzeugt einen Screen **nur dann neu, wenn sich die Nutzdaten geaendert
+haben** ("skips generating screens if the merge variables are the same between
+requests"). Die Vorlage liest `last_updated` zwar nicht - aber der Zeitstempel
+ist die einzige taegliche Aenderung an der Datei und loest damit den Wechsel
+aus. Ohne diesen Lauf bliebe dasselbe Wort stehen, egal was die Vorlage
+rechnet.
+
+Der Cron steht auf `5 23 * * *`: 00:05 MEZ im Winter, 01:05 MESZ im Sommer,
+also ganzjaehrig kurz nach lokaler Mitternacht. Eine feste UTC-Zeit kann wegen
+der Sommerzeit nicht in beiden Halbjahren exakt Mitternacht treffen. Frueher
+stand hier `0 * * * *` - stuendlich, trotz des Kommentars "Midnight UTC", also
+24 Nutzdaten-Aenderungen und damit 24 Screen-Renderings pro Tag fuer ein
+einziges neues Wort.
+
+Beide schreibenden Workflows teilen sich eine `concurrency`-Gruppe, damit sie
+sich nicht gegenseitig den Push zerschiessen.

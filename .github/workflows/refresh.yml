@@ -1,12 +1,18 @@
 name: Daily TRMNL Refresh
-# Die Recipe rechnet ihren Tagesindex selbst aus der lokalen Zeit aus und
-# liest last_updated gar nicht. Dieser Lauf haelt nur den Zeitstempel frisch;
-# er koennte auch ganz entfallen.
+# Die Recipe rechnet ihren Tagesindex selbst aus der lokalen Zeit aus. Sie
+# liest last_updated nicht - aber der Zeitstempel ist trotzdem das, was den
+# Wechsel ausloest: ohne geaenderte Nutzdaten erzeugt TRMNL keinen neuen
+# Screen. Dieser Lauf darf also nicht entfallen.
 on:
   schedule:
-    # 00:05 UTC, einmal taeglich. Vorher stand hier '0 * * * *' - das war
-    # stuendlich, trotz des Kommentars "Midnight UTC".
-    - cron: '5 0 * * *'
+    # 23:05 UTC = 00:05 MEZ im Winter, 01:05 MESZ im Sommer, also ganzjaehrig
+    # kurz nach lokaler Mitternacht. Genau dann wechselt das Display: TRMNL
+    # erzeugt einen Screen nur neu, wenn sich die Nutzdaten geaendert haben
+    # ("skips generating screens if the merge variables are the same between
+    # requests"). Der Zeitstempel unten ist hier die einzige Aenderung an den
+    # Nutzdaten - er ist also nicht kosmetisch, sondern traegt den Wechsel.
+    # (Vorher '0 * * * *' - stuendlich, trotz des Kommentars "Midnight UTC".)
+    - cron: '5 23 * * *'
   workflow_dispatch: # Allows manual testing button
 
 concurrency:
