@@ -1,0 +1,73 @@
+name: Neues Wort aufnehmen
+
+# Loest aus, wenn der Shortcut eine Datei in inbox/ ablegt.
+#
+# Ablauf:
+#   1. pruefen, ob Felder fehlen
+#   2. nur dann Claude Code starten, das die Inbox-Datei ergaenzt
+#   3. deterministisch validieren und in habedere.json uebernehmen
+#
+# Das Sprachmodell schreibt ausschliesslich in inbox/. Die Hauptliste aendert
+# nur scripts/merge_inbox.py, und nur was dort durch die Pruefung geht.
+
+on:
+  push:
+    paths:
+      - 'inbox/**.json'
+  workflow_dispatch:
+
+# Der taegliche Refresh schreibt dieselbe Datei. Ohne diese Gruppe koennen sich
+# die beiden Laeufe gegenseitig den Push zerschiessen.
+concurrency:
+  group: habedere-schreibt
+  cancel-in-progress: false
+
+jobs:
+  aufnehmen:
+    # Der Merge-Commit unten traegt [skip ci] - diese Bedingung ist der zweite
+    # Riegel gegen eine Schleife.
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Was liegt in der Inbox?
+        id: pruefen
+        run: python3 scripts/merge_inbox.py --report
+
+      - name: Fehlende Felder ergaenzen
+        if: steps.pruefen.outputs.needs_enrichment == 'true'
+        uses: anthropics/claude-code-action@v1
+        with:
+          # Laeuft ueber das Claude-Abo, nicht ueber API-Guthaben.
+          # Token einmalig mit `claude setup-token` erzeugen und als
+          # Repository-Secret CLAUDE_CODE_OAUTH_TOKEN hinterlegen.
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          # Ohne diese Zeile authentifiziert sich die Action als Claude-GitHub-App.
+          # Die braucht es hier nicht: Claude schreibt nur Dateien auf dem Runner,
+          # committet wird weiter unten.
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          prompt: "/enrich-word"
+          claude_args: |
+            --max-turns 15
+            --allowedTools "Read,Write,Edit,Glob,Bash(python3 scripts/merge_inbox.py --report)"
+
+      - name: Validieren und uebernehmen
+        id: merge
+        run: python3 scripts/merge_inbox.py --merge
+
+      - name: Commit und Push
+        run: |
+          git config user.name "Styrian Bot"
+          git config user.email "actions@github.com"
+          git add habedere.json inbox/
+          git diff --staged --quiet && echo "nichts zu committen" || \
+            (git commit -m "Neue Woerter aufgenommen [skip ci]" && git push)

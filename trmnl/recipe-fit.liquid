@@ -1,0 +1,163 @@
+{%- comment %}
+  ===========================================
+  WORT DES TAGES - Logik
+  ===========================================
+  Dieselbe Markup laeuft in allen vier Tabs. Die view--* Klasse setzt TRMNL
+  selbst, die Hoehenbudgets misst das Skript am Ende zur Laufzeit.
+{%- endcomment %}
+
+{%- assign instance_name = trmnl.plugin_settings.instance_name | default: 'Wort des Tages' -%}
+
+{%- comment %} 1. ZEIT {% endcomment %}
+{%- assign epoch_utc     = trmnl.system.timestamp_utc | default: 0 | plus: 0 -%}
+{%- assign user_offset   = trmnl.user.utc_offset      | default: 0 | plus: 0 -%}
+{%- assign local_seconds = epoch_utc | plus: user_offset -%}
+{%- assign day_index     = local_seconds | divided_by: 86400 -%}
+
+{%- comment %} 2. DATEN {% endcomment %}
+{%- assign pool = austrian_words -%}
+{%- if pool == nil -%}
+  {%- if merge_variables.IDX_0.austrian_words != nil -%}
+    {%- assign pool = merge_variables.IDX_0.austrian_words -%}
+  {%- endif -%}
+{%- endif -%}
+
+{%- assign pool_size = pool | size | default: 0 -%}
+{%- assign item = nil -%}
+
+{%- if pool_size > 0 -%}
+  {%- assign idx  = day_index | modulo: pool_size -%}
+  {%- assign item = pool[idx] -%}
+{%- endif -%}
+
+{%- comment %}
+  Notfall-Budgets, falls das Skript unten nicht laeuft. Fuer 800x480 gemessen,
+  Aufteilung 48/26/26. view_size an den Tab anpassen, in den das hier
+  eingefuegt wird. Optimiert ist die Aufteilung fuer den Quadranten.
+{%- endcomment %}
+{%- assign view_size = 'quadrant' -%}
+{%- case view_size -%}
+  {%- when 'full' -%}
+    {%- assign word_box = 191 -%}{%- assign dial_box = 103 -%}{%- assign hoch_box = 103 -%}
+  {%- when 'half_vertical' -%}
+    {%- assign word_box = 190 -%}{%- assign dial_box = 102 -%}{%- assign hoch_box = 102 -%}
+  {%- else -%}
+    {%- assign word_box = 77 -%}{%- assign dial_box = 41 -%}{%- assign hoch_box = 41 -%}
+{%- endcase -%}
+
+{%- comment %}
+  ===========================================
+  ANSICHT
+  ===========================================
+{%- endcomment %}
+<style>
+  /* display:block ist der Kern. Der Fitter misst getBoundingClientRect():
+     bei einem inline-Element ist das die Schriftbox, belegt wird im Layout
+     aber die Zeilenhoehe. Als Block sind gemessene und belegte Hoehe gleich. */
+  .wt {
+    display: block;
+    overflow-wrap: anywhere;
+
+    /* Dieselbe Familie wie bisher. Die alte Markup nutzte title/title--large,
+       also --title-font-family; unter dem TRMNL-Schriftpaket ist das die
+       Pixelschrift. Ohne diese Zeile faellt der Text auf --value-font-family
+       (Inter) zurueck, weil die Elemente jetzt .value tragen. */
+    font-family: var(--title-font-family);
+    /* schlaegt die Inline-Zeilenhoehe, die der Fitter beim Verkleinern setzt.
+       1.15 statt 1.35: im Quadranten sind 173px fuer drei Bloecke knapp, und
+       Deutsch braucht keine Oberlaengen-Reserve. Hebt das Stichwort im Median
+       von 46px auf 68px, ohne dass die Saetze kleiner werden. */
+    line-height: 1.15 !important;
+  }
+
+  /* Ceilings, keine Groessen: der Fitter geht von hier nur nach unten.
+     Bewusst hoch, damit das Hoehenbudget bindet und nicht die Klasse. */
+  .wt--word { font-weight: 800; font-size: var(--value-xxxlarge-font-size); }
+  .wt--dial { font-weight: 600; font-size: var(--value-xlarge-font-size); }
+  .wt--hoch { font-weight: 400; font-size: var(--value-xlarge-font-size); color: #444; }
+</style>
+
+<div class="layout layout--col layout--center-x layout--center-y gap--xsmall text--center">
+
+  {%- if pool_size == 0 -%}
+    <div class="flex flex--col gap--xsmall">
+      <span class="title title--large">No Data</span>
+      <span class="description">Add <code>{"austrian_words": [...]}</code> to Static Data.</span>
+    </div>
+
+  {%- elsif item == nil or item.word == blank -%}
+    <div class="flex flex--col gap--xsmall">
+      <span class="title title--large">Data Error</span>
+      <span class="description">Item missing 'word' key.</span>
+    </div>
+
+  {%- else -%}
+
+    <div class="w--full px--1">
+      <span class="value wt wt--word"
+            data-fit-slot="48"
+            data-value-fit="true"
+            data-value-fit-max-height="{{ word_box }}">{{ item.word }}</span>
+    </div>
+
+    {%- if item.phrase and item.phrase != blank -%}
+      <div class="w--full px--1">
+        <span class="value wt wt--dial"
+              data-fit-slot="26"
+              data-value-fit="true"
+              data-value-fit-max-height="{{ dial_box }}">{{ item.phrase }}</span>
+      </div>
+    {%- endif -%}
+
+    {%- if item.translation and item.translation != blank -%}
+      <div class="w--full px--1">
+        <span class="value wt wt--hoch"
+              data-fit-slot="26"
+              data-value-fit="true"
+              data-value-fit-max-height="{{ hoch_box }}">{{ item.translation }}</span>
+      </div>
+    {%- endif -%}
+
+  {%- endif -%}
+
+</div>
+
+<div class="title_bar">
+  <span class="title">{{ instance_name }}</span>
+</div>
+
+{%- comment %}
+  Misst die echte Innenhoehe des Layouts und verteilt sie nach data-fit-slot
+  auf die sichtbaren Elemente. Damit stimmen die Budgets in jeder View und auf
+  jedem Geraet. Laeuft beim Parsen, also vor den Framework-Engines.
+  Faellt das Skript aus, greifen die Zahlen von oben.
+{%- endcomment %}
+<script>
+(function () {
+  function budget() {
+    document.querySelectorAll('.layout').forEach(function (layout) {
+      var slots = [].filter.call(layout.querySelectorAll('[data-fit-slot]'),
+                                 function (s) { return s.offsetParent !== null; });
+      if (!slots.length) return;
+
+      var cs    = getComputedStyle(layout);
+      var inner = layout.clientHeight
+                - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
+      var gap   = parseFloat(cs.rowGap || cs.gap) || 0;
+      if (!(inner > 0)) return;
+
+      var usable = Math.max(0, inner - gap * (slots.length - 1) - 2);
+      var total  = 0;
+      slots.forEach(function (s) { total += parseFloat(s.dataset.fitSlot) || 0; });
+      if (!total) return;
+
+      slots.forEach(function (s) {
+        s.dataset.valueFitMaxHeight =
+          Math.floor(usable * (parseFloat(s.dataset.fitSlot) / total));
+      });
+    });
+  }
+  budget();
+  document.addEventListener('DOMContentLoaded', budget);
+})();
+</script>

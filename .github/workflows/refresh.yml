@@ -1,8 +1,17 @@
 name: Daily TRMNL Refresh
+# Die Recipe rechnet ihren Tagesindex selbst aus der lokalen Zeit aus und
+# liest last_updated gar nicht. Dieser Lauf haelt nur den Zeitstempel frisch;
+# er koennte auch ganz entfallen.
 on:
   schedule:
-    - cron: '0 * * * *' # Midnight UTC
+    # 00:05 UTC, einmal taeglich. Vorher stand hier '0 * * * *' - das war
+    # stuendlich, trotz des Kommentars "Midnight UTC".
+    - cron: '5 0 * * *'
   workflow_dispatch: # Allows manual testing button
+
+concurrency:
+  group: habedere-schreibt
+  cancel-in-progress: false
 
 jobs:
   update-timestamp:
