@@ -120,3 +120,19 @@ einziges neues Wort.
 
 Beide schreibenden Workflows teilen sich eine `concurrency`-Gruppe, damit sie
 sich nicht gegenseitig den Push zerschiessen.
+
+## Die Groesse im Blick behalten
+
+TRMNL lehnt Nutzdaten ueber 100 KB ab und setzt das Plugin dann auf
+"degraded" - es holt gar nichts mehr, bis man die Gesundheit von Hand
+zuruecksetzt. Weil die Vorlage den Index selbst rechnet, muss die ganze Liste
+raus; sie waechst also mit jedem neuen Wort.
+
+Stand jetzt: 231 Eintraege, 43 KB, 42 % der Grenze. Bei rund 190 Bytes je
+Eintrag ist bei etwa 550 Woertern Schluss. `merge_inbox.py --merge` gibt die
+Groesse nach jedem Lauf aus und warnt ab 80 %.
+
+Wenn es soweit ist: dasselbe machen wie mythai. Dort schreibt der taegliche
+Lauf eine zweite, kleine Datei mit nur dem Eintrag des Tages, und die Vorlage
+liest die statt der Liste. Kostet den Wechsel um lokale Mitternacht in der
+Vorlage - der haengt dann am Zeitpunkt des Workflow-Laufs.

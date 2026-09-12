@@ -135,6 +135,27 @@ def cmd_report():
     return 0
 
 
+# TRMNL lehnt Nutzdaten ueber 100 KB ab und setzt das Plugin dann auf
+# "degraded" - es holt gar nichts mehr, bis man die Gesundheit von Hand
+# zuruecksetzt. habedere.json geht als Ganzes raus, weil die Vorlage den Index
+# selbst rechnet und dafuer die Liste braucht. Also mitzaehlen.
+TRMNL_MAX = 100 * 1024
+TRMNL_WARN = 80 * 1024
+
+
+def warn_groesse():
+    size = MAIN.stat().st_size
+    anteil = size / TRMNL_MAX * 100
+    print(f"{MAIN.name}: {size} Bytes, {anteil:.0f} % von TRMNLs 100-KB-Grenze.")
+    if size >= TRMNL_WARN:
+        je = size // max(1, len(json.loads(
+            MAIN.read_text(encoding="utf-8"))["austrian_words"]))
+        print(f"  Achtung: nur noch rund {(TRMNL_MAX - size) // max(1, je)} "
+              f"Eintraege Luft. Darueber holt das Display gar nichts mehr.")
+        print("  Ausweg: nur den Eintrag des Tages ausliefern, wie mythai es")
+        print("  macht (dort schreibt refresh.py eine zweite, kleine Datei).")
+
+
 def cmd_merge():
     files = inbox_files()
     if not files:
@@ -175,6 +196,7 @@ def cmd_merge():
         print(f"  UEBERSPRUNGEN {name}: {why}")
     print(f"Aufgenommen: {len(added)} ({', '.join(added) or '-'}), "
           f"liegen geblieben: {len(skipped)}, Bestand: {len(words)}")
+    warn_groesse()
 
     emit_output("changed", "true" if added else "false")
     emit_output("added", ", ".join(added))
